@@ -1,0 +1,28 @@
+{
+  "name": "serverless-ssm-provider",
+  "version": "0.0.1",
+  "description": "Override AWS SSM locally for Serverless projects",
+  "main": "index.js",
+  "repository": "https://github.com/joshuahiggins/serverless-ssm-provider.git",
+  "homepage": "https://github.com/joshuahiggins/serverless-ssm-provider#readme",
+  "bugs": {
+    "url": "https://github.com/joshuahiggins/serverless-ssm-provider/issues"
+  },
+  "license": "MIT",
+  "author": "Joshua Higgins <hello@joshuahiggins.com>",
+  "keywords": [
+    "serverless",
+    "serverless-plugin",
+    "aws",
+    "ssm"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}
