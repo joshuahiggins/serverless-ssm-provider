@@ -1,14 +1,22 @@
 const fs = require('fs');
 
-const getValues = (path = '.env') => fs
-  .readFileSync(path, { encoding: 'utf-8' })
-  .trim()
-  .split('\n')
-  .map(line => line.split(/=(.*)/))
-  .reduce((acc, [key, value]) => {
-    acc[key] = value;
-    return acc;
-  }, {});
+const getValues = (path = '.env') => {
+  let values = {};
+  try {
+    values = fs
+      .readFileSync(path, { encoding: 'utf-8' })
+      .trim()
+      .split('\n')
+      .map(line => line.split(/=(.*)/))
+      .reduce((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      }, {});
+  } catch (err) {
+    // Catches missing environment files
+  }
+  return values;
+};
 
 class ServerlessSSMProvider {
   constructor(serverless) {
