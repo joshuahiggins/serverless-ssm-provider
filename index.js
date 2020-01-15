@@ -7,7 +7,7 @@ const getValues = (path = '.env') => {
       .readFileSync(path, { encoding: 'utf-8' })
       .trim()
       .split('\n')
-      .map(line => line.split(/=(.*)/))
+      .map((line) => line.split(/=(.*)/))
       .reduce((acc, [key, value]) => {
         acc[key] = value;
         return acc;
